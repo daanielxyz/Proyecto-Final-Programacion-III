@@ -1,0 +1,13 @@
+[
+  {
+    "id": "pr1",
+    "estado": "idea",
+    "fecha_creacion": "2025-11-07T06:22:09.764000Z",
+    "equipo_id": "e1",
+    "avances": [],
+    "retroalimentacion": [],
+    "categoria": "educativo",
+    "descripcion": "Una app innovadora",
+    "titulo": "App Educativa"
+  }
+]

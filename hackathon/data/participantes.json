@@ -1,0 +1,10 @@
+[
+  {
+    "id": "p1",
+    "nombre": "Juan",
+    "rol": "participante",
+    "correo": "juan@email.com",
+    "equipo_id": null,
+    "fecha_registro": "2025-11-07T06:21:50.844000Z"
+  }
+]
