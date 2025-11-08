@@ -1,20 +1,3 @@
 [
-  {
-    "id": "e1",
-    "integrantes": [],
-    "proyecto_id": null,
-    "estado": "activo",
-    "fecha_creacion": "2025-11-07T06:21:19.152000Z",
-    "nombre": "Los Crackers"
-  },
-  {
-    "id": "123",
-    "integrantes": [
-      "user_456"
-    ],
-    "proyecto_id": null,
-    "estado": "activo",
-    "fecha_creacion": "2025-11-07T06:05:07.494000Z",
-    "nombre": "Los Crackers"
-  }
+  
 ]
