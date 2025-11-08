@@ -144,16 +144,23 @@ defmodule Hackathon.Adapters.Persistencia.RepositorioEquipos do
   end
 
   # Convierte un mapa (del JSON) a struct Equipo
-  defp mapa_a_struct(mapa) do
-    %Equipo{
-      id: mapa.id,
-      nombre: mapa.nombre,
-      integrantes: mapa.integrantes || [],
-      proyecto_id: mapa.proyecto_id,
-      fecha_creacion: string_a_datetime(mapa.fecha_creacion),
-      estado: String.to_atom(mapa.estado || "activo")
-    }
+  defp mapa_a_struct(mapa) when is_map(mapa) do
+    # Validar que tenga las llaves mínimas necesarias
+    if Map.has_key?(mapa, :id) and Map.has_key?(mapa, :nombre) do
+      %Equipo{
+        id: mapa.id,
+        nombre: mapa.nombre,
+        integrantes: mapa[:integrantes] || [],
+        proyecto_id: mapa[:proyecto_id],
+        fecha_creacion: string_a_datetime(mapa[:fecha_creacion]),
+        estado: String.to_atom(mapa[:estado] || "activo")
+      }
+    else
+      # Si el mapa está incompleto, retornar nil y será filtrado
+      nil
+    end
   end
+  defp mapa_a_struct(_), do: nil
 
   # Convierte DateTime a string para JSON
   defp datetime_a_string(nil), do: nil
