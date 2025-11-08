@@ -1,18 +1,9 @@
 defmodule Hackathon do
   @moduledoc """
-  Documentation for `Hackathon`.
+  Aplicación principal para el proyecto como tal
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Hackathon.hello()
-      :world
-
-  """
-  def hello do
-    :world
+  def main(_args) do
+    Hackathon.Adapters.CLI.start()
   end
 end

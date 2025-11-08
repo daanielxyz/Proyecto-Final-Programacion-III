@@ -1,2 +1,26 @@
 [
+  {
+    "id": "2847cb09-f1a6-41d8-889c-aa62cb215105",
+    "nombre": "Admin",
+    "equipo_id": null,
+    "correo": "admin@hackathon.com",
+    "rol": "organizador",
+    "fecha_registro": "2025-11-08T03:23:23.731000Z"
+  },
+  {
+    "id": "14278c41-0bd7-4248-ae80-71e75f599201",
+    "nombre": "Carlos Ruiz",
+    "equipo_id": "b5d0ce08-92a1-495c-909a-c1f2d0944677",
+    "correo": "carlos@email.com",
+    "rol": "participante",
+    "fecha_registro": "2025-11-08T03:23:18.494000Z"
+  },
+  {
+    "id": "bb92ae39-c15c-47c6-b763-7e839e39e639",
+    "nombre": "Ana López",
+    "equipo_id": "b5d0ce08-92a1-495c-909a-c1f2d0944677",
+    "correo": "ana@email.com",
+    "rol": "participante",
+    "fecha_registro": "2025-11-08T03:23:18.438000Z"
+  }
 ]

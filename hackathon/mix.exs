@@ -29,6 +29,6 @@ defmodule Hackathon.MixProject do
   end
 
   defp escript do
-    [main_module: Hackathon.CLI]
+    [main_module: Hackathon]
   end
 end

@@ -1,3 +1,13 @@
 [
-  
+  {
+    "id": "b5d0ce08-92a1-495c-909a-c1f2d0944677",
+    "nombre": "Los Innovadores",
+    "integrantes": [
+      "14278c41-0bd7-4248-ae80-71e75f599201",
+      "bb92ae39-c15c-47c6-b763-7e839e39e639"
+    ],
+    "estado": "activo",
+    "fecha_creacion": "2025-11-08T03:23:05.961000Z",
+    "proyecto_id": "39db0717-86bb-42a0-8a68-108b44aa868c"
+  }
 ]
