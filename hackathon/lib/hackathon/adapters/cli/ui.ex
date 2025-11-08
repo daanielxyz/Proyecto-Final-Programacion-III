@@ -12,7 +12,7 @@ defmodule Hackathon.Adapters.CLI.UI do
   def mostrar_banner do
     IO.puts("\n")
     IO.puts(Colores.titulo("HACKATHON CODE4FUTURE"))
-    IO.puts(Colores.info("Sistema de Gestión Colaborativa"))
+    IO.puts(Colores.info("Sistema de Gestión Colaborativa\n Hecho por José Daniel Valencia y Santiago Arias Rodriguez "))
     IO.puts(Colores.separador())
     IO.puts("\nEscribe #{Colores.comando("/help")} para ver los comandos disponibles")
     IO.puts("Escribe #{Colores.comando("/exit")} para salir\n")

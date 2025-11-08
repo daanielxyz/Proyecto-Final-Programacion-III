@@ -1,7 +1,7 @@
 defmodule Hackathon.Utils.Colores do
   @moduledoc """
   Utilidades para dar formato y color a la salida de la CLI.
-  Hace que la interfaz sea más elegante y facil de leer.
+  Hace que la interfaz sea más amigable y profesional.
   """
 
   def exito(texto) do
@@ -22,12 +22,12 @@ defmodule Hackathon.Utils.Colores do
 
   def titulo(texto) do
     ancho = String.length(texto) + 4
-    borde = String.duplicate("═", ancho)
+    borde = String.duplicate("=", ancho)
 
     IO.ANSI.bright() <> IO.ANSI.blue() <>
-    "\n╔" <> borde <> "╗\n" <>
-    "║  " <> texto <> "  ║\n" <>
-    "╚" <> borde <> "╝\n" <>
+    "\n+" <> borde <> "+\n" <>
+    "|  " <> texto <> "  |\n" <>
+    "+" <> borde <> "+\n" <>
     IO.ANSI.reset()
   end
 
@@ -40,6 +40,6 @@ defmodule Hackathon.Utils.Colores do
   end
 
   def separador do
-    IO.ANSI.blue() <> String.duplicate("─", 50) <> IO.ANSI.reset()
+    IO.ANSI.blue() <> String.duplicate("-", 50) <> IO.ANSI.reset()
   end
 end

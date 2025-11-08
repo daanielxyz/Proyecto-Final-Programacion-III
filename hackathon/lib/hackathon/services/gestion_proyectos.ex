@@ -46,9 +46,9 @@ defmodule Hackathon.Services.GestionProyectos do
 
         # 3. Guardar proyecto
         with {:ok, proyecto} <- RepositorioProyectos.guardar(proyecto),
-             {:ok, equipo} <- RepositorioEquipos.obtener_por_id(equipo_id),
-             equipo_actualizado = Hackathon.Domain.Equipo.asignar_proyecto(equipo, proyecto.id),
-             {:ok, _} <- RepositorioEquipos.actualizar(equipo_actualizado) do
+              {:ok, equipo} <- RepositorioEquipos.obtener_por_id(equipo_id),
+              equipo_actualizado = Hackathon.Domain.Equipo.asignar_proyecto(equipo, proyecto.id),
+              {:ok, _} <- RepositorioEquipos.actualizar(equipo_actualizado) do
           {:ok, proyecto}
         else
           {:error, razon} -> {:error, "Error al guardar: #{razon}"}
