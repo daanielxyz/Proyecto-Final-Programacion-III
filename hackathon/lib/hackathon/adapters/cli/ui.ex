@@ -12,7 +12,7 @@ defmodule Hackathon.Adapters.CLI.UI do
   def mostrar_banner do
     IO.puts("\n")
     IO.puts(Colores.titulo("HACKATHON CODE4FUTURE"))
-    IO.puts(Colores.info("Sistema de Gestión Colaborativa\n Hecho por José Daniel Valencia y Santiago Arias Rodriguez "))
+    IO.puts(Colores.info("Sistema de Gestión Colaborativa"))
     IO.puts(Colores.separador())
     IO.puts("\nEscribe #{Colores.comando("/help")} para ver los comandos disponibles")
     IO.puts("Escribe #{Colores.comando("/exit")} para salir\n")
@@ -31,40 +31,40 @@ defmodule Hackathon.Adapters.CLI.UI do
   def mostrar_ayuda do
     IO.puts("\n" <> Colores.titulo("COMANDOS DISPONIBLES"))
 
-    IO.puts(Colores.destacado("\n📋 GESTIÓN DE EQUIPOS:"))
+    IO.puts(Colores.destacado("\n[EQUIPOS]:"))
     IO.puts("  #{Colores.comando("/teams")}                    - Listar todos los equipos")
     IO.puts("  #{Colores.comando("/teams create <nombre>")}    - Crear un nuevo equipo")
     IO.puts("  #{Colores.comando("/team <nombre>")}            - Ver detalles de un equipo")
     IO.puts("  #{Colores.comando("/join <equipo>")}            - Unirse a un equipo")
 
-    IO.puts(Colores.destacado("\n👥 PARTICIPANTES:"))
+    IO.puts(Colores.destacado("\n[PARTICIPANTES]:"))
     IO.puts("  #{Colores.comando("/register <nombre> <correo>")} - Registrarse como participante")
     IO.puts("  #{Colores.comando("/participants")}                - Listar participantes")
     IO.puts("  #{Colores.comando("/me <correo>")}                 - Ver mi información")
 
-    IO.puts(Colores.destacado("\n💡 PROYECTOS:"))
+    IO.puts(Colores.destacado("\n[PROYECTOS]:"))
     IO.puts("  #{Colores.comando("/projects")}                              - Listar todos los proyectos")
     IO.puts("  #{Colores.comando("/project <equipo>")}                      - Ver proyecto de un equipo")
     IO.puts("  #{Colores.comando("/register-project <equipo> | <titulo> | <desc> | <categoria>")}")
     IO.puts("  #{Colores.comando("/progress <equipo> | <avance>")}         - Actualizar avance")
 
-    IO.puts(Colores.destacado("\n💬 CHAT:"))
+    IO.puts(Colores.destacado("\n[CHAT]:"))
     IO.puts("  #{Colores.comando("/chat <equipo>")}                    - Ver chat de equipo")
     IO.puts("  #{Colores.comando("/send <id> | <mensaje>")}           - Enviar mensaje")
     IO.puts("  #{Colores.comando("/announce <id> | <anuncio>")}       - Enviar anuncio (organizadores)")
     IO.puts("  #{Colores.comando("/announcements")}                   - Ver anuncios")
 
-    IO.puts(Colores.destacado("\n🎓 MENTORÍA:"))
+    IO.puts(Colores.destacado("\n[MENTORIA]:"))
     IO.puts("  #{Colores.comando("/mentors")}                                - Listar mentores")
     IO.puts("  #{Colores.comando("/register-mentor <nombre> <especialidad>")} - Registrar mentor")
     IO.puts("  #{Colores.comando("/assign-mentor <id> | <equipo>")}          - Asignar mentor")
     IO.puts("  #{Colores.comando("/feedback <id> | <equipo> | <comentario>")} - Dar feedback")
 
-    IO.puts(Colores.destacado("\n📊 ESTADÍSTICAS:"))
+    IO.puts(Colores.destacado("\n[ESTADISTICAS]:"))
     IO.puts("  #{Colores.comando("/stats")}          - Estadísticas generales")
     IO.puts("  #{Colores.comando("/stats <equipo>")} - Estadísticas de equipo")
 
-    IO.puts(Colores.destacado("\n🔧 OTROS:"))
+    IO.puts(Colores.destacado("\n[OTROS]:"))
     IO.puts("  #{Colores.comando("/help")}   - Mostrar esta ayuda")
     IO.puts("  #{Colores.comando("/clear")}  - Limpiar pantalla")
     IO.puts("  #{Colores.comando("/exit")}   - Salir del sistema")
@@ -82,8 +82,8 @@ defmodule Hackathon.Adapters.CLI.UI do
       IO.puts("\n" <> Colores.titulo("EQUIPOS REGISTRADOS (#{length(equipos)})"))
 
       Enum.each(equipos, fn equipo ->
-        estado_icono = if equipo.estado == :activo, do: "✓", else: "✗"
-        proyecto_icono = if equipo.tiene_proyecto, do: "📋", else: "⭕"
+        estado_icono = if equipo.estado == :activo, do: "[OK]", else: "[X]"
+        proyecto_icono = if equipo.tiene_proyecto, do: "[PROYECTO]", else: "[PENDIENTE]"
 
         IO.puts("\n#{Colores.destacado(equipo.nombre)} #{estado_icono}")
         IO.puts("  ID: #{equipo.id}")

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "57d70dd0-e0c4-41b0-8a3e-427e44c2fe63",
+    "nombre": "Ing.Rodr¡guez",
+    "disponible": true,
+    "especialidad": "UX/UI_Design[3~",
+    "equipos_asignados": []
+  },
+  {
+    "id": "1aa02798-fb83-4906-837f-d4a72ba238f4",
+    "nombre": "Dra.Mart¡nez",
+    "disponible": true,
+    "especialidad": "Desarrollo_Web",
+    "equipos_asignados": [
+      "b401db27-e4d6-484a-8a52-4c397e4275b5"
+    ]
+  },
+  {
+    "id": "6bc32b76-2191-4527-b492-f796c9e09eae",
+    "nombre": "Dr.Garc¡a",
+    "disponible": true,
+    "especialidad": "Inteligencia_Artificial",
+    "equipos_asignados": [
+      "b401db27-e4d6-484a-8a52-4c397e4275b5",
+      "3b001332-4c89-4a07-a68a-fcaad1c27dfb"
+    ]
+  }
+]

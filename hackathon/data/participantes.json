@@ -1,0 +1,50 @@
+[
+  {
+    "id": "06336133-7381-499a-87e8-560a35b0d3fb",
+    "nombre": "Admin",
+    "correo": "Hackathon admin@hackathon.com",
+    "rol": "organizador",
+    "equipo_id": null,
+    "fecha_registro": "2025-11-16T05:52:53.481000Z"
+  },
+  {
+    "id": "e191f432-985b-4067-875a-4e29d95da71d",
+    "nombre": "Pedro",
+    "correo": "S nchez pedro@email.com",
+    "rol": "participante",
+    "equipo_id": null,
+    "fecha_registro": "2025-11-16T05:52:12.576000Z"
+  },
+  {
+    "id": "31271bb5-a708-4d93-ab67-a2804f9f5aac",
+    "nombre": "Ana",
+    "correo": "L¢pez ana@email.com/participants",
+    "rol": "participante",
+    "equipo_id": null,
+    "fecha_registro": "2025-11-16T05:14:40.133000Z"
+  },
+  {
+    "id": "216689b0-a266-4996-987a-4ae9bfe4eff5",
+    "nombre": "Carlos",
+    "correo": "Ruiz carlos@email.com",
+    "rol": "participante",
+    "equipo_id": "b401db27-e4d6-484a-8a52-4c397e4275b5",
+    "fecha_registro": "2025-11-16T05:14:27.851000Z"
+  },
+  {
+    "id": "e5d8856e-20fc-4096-b0e3-30abb800ce26",
+    "nombre": "Mar¡a",
+    "correo": "Garc¡a maria@email.com",
+    "rol": "participante",
+    "equipo_id": "b401db27-e4d6-484a-8a52-4c397e4275b5",
+    "fecha_registro": "2025-11-16T05:14:27.847000Z"
+  },
+  {
+    "id": "7592872a-651c-46f3-8573-6ff8974be70e",
+    "nombre": "Juan",
+    "correo": "Prez juan@email.com",
+    "rol": "participante",
+    "equipo_id": "3b001332-4c89-4a07-a68a-fcaad1c27dfb",
+    "fecha_registro": "2025-11-16T05:14:27.841000Z"
+  }
+]

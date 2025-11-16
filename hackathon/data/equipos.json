@@ -1,0 +1,31 @@
+[
+  {
+    "id": "5f09571e-c8b9-4137-9a2d-dbfe335d0a84",
+    "nombre": "Tech Warriors",
+    "estado": "activo",
+    "integrantes": [],
+    "fecha_creacion": "2025-11-16T05:13:21.819000Z",
+    "proyecto_id": null
+  },
+  {
+    "id": "b401db27-e4d6-484a-8a52-4c397e4275b5",
+    "nombre": "Los Visionarios",
+    "estado": "activo",
+    "integrantes": [
+      "216689b0-a266-4996-987a-4ae9bfe4eff5",
+      "e5d8856e-20fc-4096-b0e3-30abb800ce26"
+    ],
+    "fecha_creacion": "2025-11-16T05:13:12.860000Z",
+    "proyecto_id": "2a57ef1c-e675-4450-b6cf-41ec55b66ddd"
+  },
+  {
+    "id": "3b001332-4c89-4a07-a68a-fcaad1c27dfb",
+    "nombre": "Los Innovadores",
+    "estado": "activo",
+    "integrantes": [
+      "7592872a-651c-46f3-8573-6ff8974be70e"
+    ],
+    "fecha_creacion": "2025-11-16T05:13:03.375000Z",
+    "proyecto_id": "1bb5f6b4-dfbc-4c24-bdaa-073ba94e66f8"
+  }
+]

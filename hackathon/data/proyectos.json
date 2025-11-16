@@ -1,0 +1,55 @@
+[
+  {
+    "id": "2a57ef1c-e675-4450-b6cf-41ec55b66ddd",
+    "titulo": "EduTech",
+    "estado": "idea",
+    "categoria": "educativo",
+    "descripcion": "Plataforma educativa con IA",
+    "avances": [
+      {
+        "texto": "Prototipo del chatbot funcionando",
+        "fecha": "2025-11-16T05:32:24.903000Z"
+      }
+    ],
+    "retroalimentacion": [
+      {
+        "comentario": "El chatbot tiene gran potencial, trabajen en la personalizaci¢n",
+        "fecha": "2025-11-16T05:43:52.462000Z",
+        "mentor_id": "1aa02798-fb83-4906-837f-d4a72ba238f4"
+      }
+    ],
+    "equipo_id": "b401db27-e4d6-484a-8a52-4c397e4275b5",
+    "fecha_creacion": "2025-11-16T05:29:45.014000Z"
+  },
+  {
+    "id": "1bb5f6b4-dfbc-4c24-bdaa-073ba94e66f8",
+    "titulo": "EcoApp",
+    "estado": "idea",
+    "categoria": "ambiental",
+    "descripcion": "Aplicaci¢n para reciclaje inteligente",
+    "avances": [
+      {
+        "texto": "Implementado el sistema de reconocimiento de materiales",
+        "fecha": "2025-11-16T05:32:20.422000Z"
+      },
+      {
+        "texto": "Completado el dise¤o de la interfaz de usuario",
+        "fecha": "2025-11-16T05:32:16.374000Z"
+      }
+    ],
+    "retroalimentacion": [
+      {
+        "comentario": "Consideren integrar gamificaci¢n para mayor engagement",
+        "fecha": "2025-11-16T05:42:46.636000Z",
+        "mentor_id": "6bc32b76-2191-4527-b492-f796c9e09eae"
+      },
+      {
+        "comentario": "Excelente idea, enf¢quense en la experiencia de usuario",
+        "fecha": "2025-11-16T05:41:30.013000Z",
+        "mentor_id": "6bc32b76-2191-4527-b492-f796c9e09eae"
+      }
+    ],
+    "equipo_id": "3b001332-4c89-4a07-a68a-fcaad1c27dfb",
+    "fecha_creacion": "2025-11-16T05:29:37.277000Z"
+  }
+]

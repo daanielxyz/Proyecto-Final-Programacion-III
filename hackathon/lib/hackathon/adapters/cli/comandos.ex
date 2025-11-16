@@ -5,6 +5,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
 
   alias Hackathon.Services.{GestionEquipos, GestionParticipantes, GestionProyectos, ChatService, MentoriaService}
   alias Hackathon.Adapters.CLI.UI
+  alias Hackathon.Utils.Colores
 
   @doc """
   Ejecuta un comando parseado.
@@ -171,9 +172,9 @@ defmodule Hackathon.Adapters.CLI.Comandos do
 
   def ejecutar({:ver_anuncios}) do
     {:ok, anuncios} = ChatService.ver_anuncios()
-    IO.puts("\n📢 ANUNCIOS\n")
+    IO.puts("\n" <> Colores.destacado("ANUNCIOS") <> "\n")
     if Enum.empty?(anuncios) do
-      UI.advertencia("No hay anuncios")
+      IO.puts(Colores.advertencia("No hay anuncios"))
     else
       Enum.each(anuncios, fn a ->
         IO.puts("#{a.fecha}")

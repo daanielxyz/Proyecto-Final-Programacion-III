@@ -1,0 +1,42 @@
+[
+  {
+    "id": "2a6420f6-71c5-4ad8-94e2-ec7e5a31142c",
+    "timestamp": "2025-11-16T05:55:04.933000Z",
+    "contenido": "­La hackathon ha comenzado oficialmente!",
+    "equipo_id": null,
+    "emisor_id": "06336133-7381-499a-87e8-560a35b0d3fb",
+    "tipo": "anuncio"
+  },
+  {
+    "id": "5df8de6c-0dc5-4de0-a1ae-13a267c2fb26",
+    "timestamp": "2025-11-16T05:50:39.447000Z",
+    "contenido": "Hola desde Los Visionarios!",
+    "equipo_id": "b401db27-e4d6-484a-8a52-4c397e4275b5",
+    "emisor_id": "216689b0-a266-4996-987a-4ae9bfe4eff5",
+    "tipo": "normal"
+  },
+  {
+    "id": "ae5a0ebf-c33b-4611-82a6-e44878bf381f",
+    "timestamp": "2025-11-16T05:50:32.995000Z",
+    "contenido": "Excelente, yo me encargo del backend y la IA",
+    "equipo_id": "3b001332-4c89-4a07-a68a-fcaad1c27dfb",
+    "emisor_id": "7592872a-651c-46f3-8573-6ff8974be70e",
+    "tipo": "normal"
+  },
+  {
+    "id": "594c5932-7051-4e1b-b700-0e84963e483d",
+    "timestamp": "2025-11-16T05:50:28.866000Z",
+    "contenido": "Perfecto! Yo puedo encargarme del frontend",
+    "equipo_id": "b401db27-e4d6-484a-8a52-4c397e4275b5",
+    "emisor_id": "e5d8856e-20fc-4096-b0e3-30abb800ce26",
+    "tipo": "normal"
+  },
+  {
+    "id": "5d46e226-3633-425c-a94a-e9fd8eab11f7",
+    "timestamp": "2025-11-16T05:50:23.735000Z",
+    "contenido": "Hola equipo! Comencemos a trabajar en EcoApp",
+    "equipo_id": "3b001332-4c89-4a07-a68a-fcaad1c27dfb",
+    "emisor_id": "7592872a-651c-46f3-8573-6ff8974be70e",
+    "tipo": "normal"
+  }
+]
