@@ -41,6 +41,8 @@ defmodule Hackathon.Adapters.CLI.UI do
     IO.puts("  #{Colores.comando("/register <nombre> <correo>")} - Registrarse como participante")
     IO.puts("  #{Colores.comando("/participants")}                - Listar participantes")
     IO.puts("  #{Colores.comando("/me <correo>")}                 - Ver mi información")
+    IO.puts("  #{Colores.comando("/register-organizer <Nombre> <Correo>")} - Registrar como organizador")
+
 
     IO.puts(Colores.destacado("\n[PROYECTOS]:"))
     IO.puts("  #{Colores.comando("/projects")}                              - Listar todos los proyectos")
