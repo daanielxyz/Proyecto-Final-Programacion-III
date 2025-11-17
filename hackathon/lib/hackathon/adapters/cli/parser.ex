@@ -76,6 +76,14 @@ defmodule Hackathon.Adapters.CLI.Parser do
     {:ver_participante, String.trim(correo)}
   end
 
+  # Parsea el comando
+  defp parsear_comando("/register-organizer " <> args) do
+    case String.split(args, " ", parts: 2) do
+      [nombre, correo] -> {:registrar_organizador, String.trim(nombre), String.trim(correo)}
+      _ -> {:error, "Uso: /register-organizer <nombre> <correo>"}
+    end
+  end
+
   # ========== GESTIÓN DE PROYECTOS ==========
 
   # /project <equipo> - Ver proyecto de un equipo
@@ -90,11 +98,9 @@ defmodule Hackathon.Adapters.CLI.Parser do
   defp parsear_comando("/register-project " <> args) do
     case String.split(args, "|") do
       [equipo, titulo, descripcion, categoria] ->
-        {:registrar_proyecto,
-          String.trim(equipo),
-          String.trim(titulo),
-          String.trim(descripcion),
-          String.trim(categoria)}
+        {:registrar_proyecto, String.trim(equipo), String.trim(titulo), String.trim(descripcion),
+         String.trim(categoria)}
+
       _ ->
         {:error, "Uso: /register-project <equipo> | <titulo> | <descripcion> | <categoria>"}
     end
@@ -142,8 +148,11 @@ defmodule Hackathon.Adapters.CLI.Parser do
   # /register-mentor <nombre> <especialidad> - Registrar mentor
   defp parsear_comando("/register-mentor " <> args) do
     case String.split(args, " ", parts: 2) do
-      [nombre, especialidad] -> {:registrar_mentor, String.trim(nombre), String.trim(especialidad)}
-      _ -> {:error, "Uso: /register-mentor <nombre> <especialidad>"}
+      [nombre, especialidad] ->
+        {:registrar_mentor, String.trim(nombre), String.trim(especialidad)}
+
+      _ ->
+        {:error, "Uso: /register-mentor <nombre> <especialidad>"}
     end
   end
 
@@ -160,6 +169,7 @@ defmodule Hackathon.Adapters.CLI.Parser do
     case String.split(args, "|", parts: 3) do
       [mentor_id, equipo, comentario] ->
         {:dar_feedback, String.trim(mentor_id), String.trim(equipo), String.trim(comentario)}
+
       _ ->
         {:error, "Uso: /feedback <mentor_id> | <equipo> | <comentario>"}
     end

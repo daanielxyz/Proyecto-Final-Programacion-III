@@ -3,7 +3,14 @@ defmodule Hackathon.Adapters.CLI.Comandos do
   Ejecuta los comandos parseados conectándolos con los Services.
   """
 
-  alias Hackathon.Services.{GestionEquipos, GestionParticipantes, GestionProyectos, ChatService, MentoriaService}
+  alias Hackathon.Services.{
+    GestionEquipos,
+    GestionParticipantes,
+    GestionProyectos,
+    ChatService,
+    MentoriaService
+  }
+
   alias Hackathon.Adapters.CLI.UI
   alias Hackathon.Utils.Colores
 
@@ -40,6 +47,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, equipo} -> UI.exito("Equipo '#{equipo.nombre}' creado con ID: #{equipo.id}")
       {:error, msg} -> UI.error(msg)
     end
+
     :continuar
   end
 
@@ -48,6 +56,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, detalle} -> UI.mostrar_detalle_equipo(detalle)
       {:error, msg} -> UI.error(msg)
     end
+
     :continuar
   end
 
@@ -60,6 +69,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, msg} -> UI.exito(msg)
       {:error, msg} -> UI.error(msg)
     end
+
     :continuar
   end
 
@@ -70,19 +80,24 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, participante} ->
         UI.exito("Participante registrado con ID: #{participante.id}")
         UI.info("Guarda tu ID para usar el sistema")
-      {:error, msg} -> UI.error(msg)
+
+      {:error, msg} ->
+        UI.error(msg)
     end
+
     :continuar
   end
 
   def ejecutar({:listar_participantes}) do
     {:ok, participantes} = GestionParticipantes.listar_participantes()
     IO.puts("\n📋 PARTICIPANTES REGISTRADOS (#{length(participantes)})\n")
+
     Enum.each(participantes, fn p ->
       equipo = if p.nombre_equipo, do: "→ #{p.nombre_equipo}", else: "(sin equipo)"
       IO.puts("• #{p.nombre} - #{p.correo} #{equipo}")
       IO.puts("  ID: #{p.id}")
     end)
+
     :continuar
   end
 
@@ -93,13 +108,30 @@ defmodule Hackathon.Adapters.CLI.Comandos do
         IO.puts("ID: #{detalle.id}")
         IO.puts("Correo: #{detalle.correo}")
         IO.puts("Rol: #{detalle.rol}")
+
         if detalle.tiene_equipo do
           IO.puts("Equipo: #{detalle.nombre_equipo}")
         else
           IO.puts("Sin equipo asignado")
         end
-      {:error, msg} -> UI.error(msg)
+
+      {:error, msg} ->
+        UI.error(msg)
     end
+
+    :continuar
+  end
+
+  # Ejecuta el comando
+  def ejecutar({:registrar_organizador, nombre, correo}) do
+    case GestionParticipantes.registrar(nombre, correo, :organizador) do
+      {:ok, participante} ->
+        UI.exito("Organizador registrado con ID: #{participante.id}")
+
+      {:error, msg} ->
+        UI.error(msg)
+    end
+
     :continuar
   end
 
@@ -116,6 +148,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, proyecto} -> UI.mostrar_detalle_proyecto(proyecto)
       {:error, msg} -> UI.error(msg)
     end
+
     :continuar
   end
 
@@ -123,12 +156,20 @@ defmodule Hackathon.Adapters.CLI.Comandos do
     # Primero obtener el ID del equipo
     case GestionEquipos.ver_equipo(equipo) do
       {:ok, detalle_equipo} ->
-        case GestionProyectos.registrar_proyecto(detalle_equipo.id, titulo, descripcion, categoria) do
+        case GestionProyectos.registrar_proyecto(
+               detalle_equipo.id,
+               titulo,
+               descripcion,
+               categoria
+             ) do
           {:ok, _proyecto} -> UI.exito("Proyecto registrado correctamente")
           {:error, msg} -> UI.error(msg)
         end
-      {:error, msg} -> UI.error(msg)
+
+      {:error, msg} ->
+        UI.error(msg)
     end
+
     :continuar
   end
 
@@ -139,8 +180,11 @@ defmodule Hackathon.Adapters.CLI.Comandos do
           {:ok, msg} -> UI.exito(msg)
           {:error, msg} -> UI.error(msg)
         end
-      {:error, msg} -> UI.error(msg)
+
+      {:error, msg} ->
+        UI.error(msg)
     end
+
     :continuar
   end
 
@@ -151,6 +195,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, mensajes} -> UI.mostrar_chat(equipo, mensajes)
       {:error, msg} -> UI.error(msg)
     end
+
     :continuar
   end
 
@@ -159,6 +204,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, msg} -> UI.exito(msg)
       {:error, msg} -> UI.error(msg)
     end
+
     :continuar
   end
 
@@ -167,12 +213,14 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, msg} -> UI.exito(msg)
       {:error, msg} -> UI.error(msg)
     end
+
     :continuar
   end
 
   def ejecutar({:ver_anuncios}) do
     {:ok, anuncios} = ChatService.ver_anuncios()
     IO.puts("\n" <> Colores.destacado("ANUNCIOS") <> "\n")
+
     if Enum.empty?(anuncios) do
       IO.puts(Colores.advertencia("No hay anuncios"))
     else
@@ -181,6 +229,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
         IO.puts("#{a.emisor}: #{a.contenido}\n")
       end)
     end
+
     :continuar
   end
 
@@ -189,12 +238,14 @@ defmodule Hackathon.Adapters.CLI.Comandos do
   def ejecutar({:listar_mentores}) do
     {:ok, mentores} = MentoriaService.listar_mentores()
     IO.puts("\n🎓 MENTORES REGISTRADOS (#{length(mentores)})\n")
+
     Enum.each(mentores, fn m ->
       disponible = if m.disponible, do: "✓ Disponible", else: "✗ No disponible"
       IO.puts("• #{m.nombre} - #{m.especialidad}")
       IO.puts("  ID: #{m.id}")
       IO.puts("  Equipos: #{m.cantidad_equipos} #{disponible}")
     end)
+
     :continuar
   end
 
@@ -202,8 +253,11 @@ defmodule Hackathon.Adapters.CLI.Comandos do
     case MentoriaService.registrar_mentor(nombre, especialidad) do
       {:ok, mentor} ->
         UI.exito("Mentor registrado con ID: #{mentor.id}")
-      {:error, msg} -> UI.error(msg)
+
+      {:error, msg} ->
+        UI.error(msg)
     end
+
     :continuar
   end
 
@@ -212,6 +266,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, msg} -> UI.exito(msg)
       {:error, msg} -> UI.error(msg)
     end
+
     :continuar
   end
 
@@ -220,6 +275,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       {:ok, msg} -> UI.exito(msg)
       {:error, msg} -> UI.error(msg)
     end
+
     :continuar
   end
 
@@ -232,6 +288,7 @@ defmodule Hackathon.Adapters.CLI.Comandos do
       proyectos: GestionProyectos.contar_proyectos(),
       mentores: MentoriaService.contar_mentores()
     }
+
     UI.mostrar_estadisticas_generales(stats)
     :continuar
   end
@@ -242,11 +299,15 @@ defmodule Hackathon.Adapters.CLI.Comandos do
         IO.puts("\n📊 ESTADÍSTICAS: #{stats.equipo}")
         IO.puts("Mensajes totales: #{stats.total_mensajes}\n")
         IO.puts("Mensajes por participante:")
+
         Enum.each(stats.mensajes_por_participante, fn p ->
           IO.puts("  • #{p.nombre}: #{p.cantidad} mensajes")
         end)
-      {:error, msg} -> UI.error(msg)
+
+      {:error, msg} ->
+        UI.error(msg)
     end
+
     :continuar
   end
 

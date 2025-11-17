@@ -1,5 +1,13 @@
 [
   {
+    "id": "312fd69f-3126-4515-b6cc-cfff554cbadc",
+    "nombre": "Admin2",
+    "correo": "sanndsand@gmail.com",
+    "rol": "organizador",
+    "equipo_id": null,
+    "fecha_registro": "2025-11-17T23:02:43.948000Z"
+  },
+  {
     "id": "06336133-7381-499a-87e8-560a35b0d3fb",
     "nombre": "Admin",
     "correo": "Hackathon admin@hackathon.com",

@@ -1,5 +1,13 @@
 [
   {
+    "id": "3068aeaf-6441-4f9f-a0f4-cde3bbffb485",
+    "timestamp": "2025-11-17T23:05:48.076000Z",
+    "contenido": "hola",
+    "equipo_id": null,
+    "emisor_id": "312fd69f-3126-4515-b6cc-cfff554cbadc",
+    "tipo": "anuncio"
+  },
+  {
     "id": "2a6420f6-71c5-4ad8-94e2-ec7e5a31142c",
     "timestamp": "2025-11-16T05:55:04.933000Z",
     "contenido": "­La hackathon ha comenzado oficialmente!",
